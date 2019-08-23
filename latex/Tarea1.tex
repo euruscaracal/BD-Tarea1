@@ -1,44 +1,73 @@
-\documentclass[12pt]{article}
+
+\documentclass[letterpaper,12pt]{article}
+% Soporte para los acentos.
 \usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
-\usepackage[margin = 1.5cm]{geometry}
+\usepackage[T1]{fontenc}
+% Idioma español.
+\usepackage[spanish,mexico, es-tabla]{babel}
+% Soporte de símbolos adicionales (matemáticas)
+\usepackage{multirow}
+\usepackage{ragged2e}
 \usepackage{mathtools}
+
+% Soporte para imágenes.
 \usepackage{graphicx}
-\usepackage{anysize}
-\usepackage{multicol}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{enumerate}
-\usepackage{stackrel}
-\usepackage{mathrsfs}
-\usepackage{parskip}
+% Modificamos los márgenes del documento.
+\usepackage[lmargin=2cm,rmargin=2cm,top=2cm,bottom=2cm]{geometry}
 
 
-    \title{Fundamentos de Bases de Datos \\Tarea 1:     Conceptos básicos}
+\title{Tarea $01$. Conceptos básicos \\
+       Fundamentos de Bases de Datos}
 
-    \author{Teresa Becerril Torres 315045132\\
-        Miguel Torres 315300442\\
-        Nicole Romina Traschikoff García 315164482\\
-        \\}
-    \date{23 de Agosto del 2019}
+\author{Teresa Becerril Torres \\
+        $\#$ de cuenta: $315045132$ \\
+        Miguel Ángel Torres Sánchez \\
+        $\#$ de cuenta: $315300442$ \\
+        Nicole Romina Traschikoff García \\
+        $\#$ de cuenta: $315164482$ \\
+        Tania Michelle Rubí Rojas \\
+        $\#$ de cuenta: $315121719$}
 
-    \begin{document}
-        \maketitle
-
+\begin{document}
+\maketitle
     \section{Conceptos generales.}
           \begin{enumerate}[a. ]
             \item ¿Por qué elegirías almacenar datos en un \textbf{sistema de base de datos} en lugar de simplemente almacenarlos
             utilizando el \textbf{sistema de archivos} de un sistema operativo? ¿En qué casos no tendría sentido utilizar un sistema
-            de base de datos?
+            de base de datos? \\
+
+            Porque en una base de datos bien diseñada se asegura la integridad de los datos y facilita trabajar con ellos a usuarios y desarrolladores. No tendría sentido usar una base de datos cuando los usuarios son pocos y cuando las cantidades de información no son grandes y no crecerán mucho o no existirá por largos periodos de tiempo.
+
             \item ¿Qué \textbf{ventajas} y \textbf{desventajas} encuentras al trabajar con una \textbf{base de datos}?
-            \item Investiga cuáles serían los distintos tipos de usuarios finales de una base de datos, indica las principales
+            \item Investiga cuáles serían los distintos tipos de usuarios finales de una base de datos, indica las principales \\
+          Las categorías de ususarios finales de una base de datos son:
+
+        	\begin{itemize}
+        		\item Usuario casual: acceden ocasionalmente a la base de datos con la necesidad de información diversa.
+        		\item Usuario paramétrico: consultan y actualizan constantemente la base de datos con funciones ya programadas y probadas.
+        		\item Usuario sofisticado: conocen bien el SMBD para implementar aplicaciones que cumplan requisitos complejos.
+        		\item Usuario independiente: utiliza paquetes de software específicos fáciles de usar para mantener una base de datos personal.
+        	\end{itemize}
             actividades que realizaría cada uno de ellos.
             \item Explica las diferencias entre la \textbf{independencia de datos física} y \textbf{lógica}. ¿Cuál es más difícil de lograr y
             por qué?
             \item ¿Qué es un \textbf{diccionario de datos} y por qué es importante para el SMBD?
             \item Indica las principales características de los modelos de datos más representativos. ¿Cuáles serían las
-            diferencias entre los modelos relacional, orientado a objetos, semiestructurado y objeto-relacional?
-            \item Elabora una \textbf{línea de tiempo}, en dónde indiques \textbf{los principales hitos} en el desarrollo de las BDs.
+            diferencias entre los modelos relacional, orientado a objetos, semiestructurado y objeto-relacional? \\
+          \begin{itemize}
+
+            \item \textbf{Modelo relacional}. Es basado en tablas. Todo el procesamiento se realiza sobre tablas y el resultado son tablas.
+            \item \textbf{Modelo orientado a objetos}. Los datos se modelan como objetos con estado y comportamiento.
+
+            \item \textbf{Modelo semiestructurado}. Representación de los datos menos rígida. Colección de nodos con su propia descripción de los datos.
+
+            \item \textbf{Modelo objeto-relacional}. Aprovecha características de datos en tablas y objetos.
+
+          \end{itemize}
+
+          La diferencia entre los modelos está en cómo representan los datos, los modelos relacional y orientado a objetos tienen una estructura rígida mientras que el modelo semiestructurado es el más flexible.\\
+
+            \item Elabora una \textbf{línea de tiempo}, en dónde indiques \textbf{los principales hitos} en el desarrollo de las BDs.\\
 
 
                   \includegraphics[width=\textwidth]{imagenes/parte1.png}
@@ -47,33 +76,29 @@
                   \includegraphics[width=\textwidth]{imagenes/parte4.png}
 
 
-            \item Indica las responsabilidades que tiene un \textbf{Sistema Manejador de Bases de Datos} y para cada responsabilidad,
-            explica los problemas que surgirían sí dicha responsabilidad no se cumpliera.
-            \item Supón que un banco pequeño desea almacenarlos su información en una base de datos y le gustaría comprar el
-            SMBD que tenga la menor cantidad de características posibles. Está interesado en ejecutar la aplicación en una
-            sola computadora personal y no se planea compartir la información con nadie. Para cada una de las siguientes
-            características explica por qué se debería o no incluir en el SMBD que desea comprar (suponiendo que se pueden
-            comprar por separado:) \textbf{seguridad, control de concurrencia, recuperación en caso de fallas, lenguaje de consulta,
-            mecanismo de vistas, manejo de transacciones.}
+            \item Indica las responsabilidades que tiene un \textbf{Sistema Manejador de Bases de Datos} y para cada responsabilidad, explica los problemas que surgirían sí dicha responsabilidad no se cumpliera. \\
+
+
+            \item Supón que un banco pequeño desea almacenarlos su información en una base de datos y le gustaría comprar el SMBD que tenga la menor cantidad de características posibles. Está interesado en ejecutar la aplicación en una sola computadora personal y no se planea compartir la información con nadie. Para cada una de las siguientescaracterísticas explica por qué se debería o no incluir en el SMBD que desea comprar (suponiendo que se pueden comprar por separado:) \textbf{seguridad, control de concurrencia, recuperación en caso de fallas, lenguaje de consulta, mecanismo de vistas, manejo de transacciones.}
           \end{enumerate}
 
             \section{Investigación.}
             \begin{enumerate}[a)]
 
-            \item ¿Qué es la \textbf{Calidad de Datos} y cómo se relaciona con las bases de datos?
+            \item ¿Qué es la \textbf{Calidad de Datos} y cómo se relaciona con las bases de datos? \\
+        	Calidad de datos se refiere a las técnicas y procesos utilizados para asegurar que un dato es adecuado para su uso en operaciones y toma de decisiones. Se relaciona con las bases de datos pues debido a la gran cantidad de información que tienen se debe asegurar que todos los datos sirven su propósito ya que de no hacerlo podría tenerse información incorrecta o poner en riesgo la seguridad de la base de datos.
+
             \item ¿Qué son las bases de datos \textbf{NoSQL}? indica el modelo de datos utilizado y algunos proveedores.
             \item ¿Qué es un \textbf{Almacén de datos}? Indica las diferencias entre éstos y una base de datos.
 
             \end{enumerate}
 
+            \section*{Referencias}
+            \begin{itemize}
 
+            	\item Elmasri, R. and Navathe, S. B. \textbf{Fundamentals of Database Systems}. Addison-Wesley Publishing Company, Sexta edición, 2011.
+            	\item Redman, T. C. \textbf{Data Driven: Profiting from Your Most important Business Asset}. Harvard Business Press, 2008.
 
-        \begin{thebibliography}{}
+            \end{itemize}
 
-            \bibitem[Example]{Example}
-
-      \end{thebibliography}
-
-
-
-    \end{document}
+            \end{document}
