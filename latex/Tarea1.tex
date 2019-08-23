@@ -1,4 +1,3 @@
-
 \documentclass[letterpaper,12pt]{article}
 % Soporte para los acentos.
 \usepackage[utf8]{inputenc}
@@ -7,6 +6,12 @@
 \usepackage[spanish,mexico, es-tabla]{babel}
 % Soporte de símbolos adicionales (matemáticas)
 \usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{enumerate}
 \usepackage{ragged2e}
 \usepackage{mathtools}
 
@@ -16,30 +21,34 @@
 \usepackage[lmargin=2cm,rmargin=2cm,top=2cm,bottom=2cm]{geometry}
 
 
-\title{Tarea $01$. Conceptos básicos \\
-       Fundamentos de Bases de Datos}
+  \title{Fundamentos de Bases de DatosTarea $01$. \\     Conceptos básicos}
 
-\author{Teresa Becerril Torres \\
-        $\#$ de cuenta: $315045132$ \\
-        Miguel Ángel Torres Sánchez \\
-        $\#$ de cuenta: $315300442$ \\
-        Nicole Romina Traschikoff García \\
-        $\#$ de cuenta: $315164482$ \\
-        Tania Michelle Rubí Rojas \\
-        $\#$ de cuenta: $315121719$}
+    \author{Teresa Becerril Torres \\
+            $\#$ de cuenta: $315045132$ \\
+            Miguel Ángel Torres Sánchez \\
+            $\#$ de cuenta: $315300442$ \\
+            Nicole Romina Traschikoff García \\
+            $\#$ de cuenta: $315164482$ \\
+            Tania Michelle Rubí Rojas \\
+            $\#$ de cuenta: $315121719$}
+        \date{18 de febrero del 2019}
 
-\begin{document}
-\maketitle
+    \begin{document}
+    \maketitle
+
     \section{Conceptos generales.}
           \begin{enumerate}[a. ]
-            \item ¿Por qué elegirías almacenar datos en un \textbf{sistema de base de datos} en lugar de simplemente almacenarlos
-            utilizando el \textbf{sistema de archivos} de un sistema operativo? ¿En qué casos no tendría sentido utilizar un sistema
-            de base de datos? \\
 
-            Porque en una base de datos bien diseñada se asegura la integridad de los datos y facilita trabajar con ellos a usuarios y desarrolladores. No tendría sentido usar una base de datos cuando los usuarios son pocos y cuando las cantidades de información no son grandes y no crecerán mucho o no existirá por largos periodos de tiempo.
+            \item ¿Por qué elegirías almacenar datos en un \textbf{sistema de base de datos} en lugar de simplemente almacenarlos utilizando el \textbf{sistema de archivos} de un sistema operativo? ¿En qué casos no tendría sentido utilizar un sistema de base de datos? \\
+
+          Porque en una base de datos bien diseñada se asegura la integridad de los datos y facilita trabajar con ellos a usuarios y desarrolladores. No tendría sentido usar una base de datos cuando los usuarios son pocos y cuando las cantidades de información no son grandes y no crecerán mucho o no existirá por largos periodos de tiempo.
 
             \item ¿Qué \textbf{ventajas} y \textbf{desventajas} encuentras al trabajar con una \textbf{base de datos}?
+
+            \item Investiga cuáles serían las \textbf{responsabilidades} de una \textbf{DBA} y las de un \textbf{diseñador de bases de datos.}
+
             \item Investiga cuáles serían los distintos tipos de usuarios finales de una base de datos, indica las principales \\
+
           Las categorías de ususarios finales de una base de datos son:
 
         	\begin{itemize}
@@ -48,10 +57,11 @@
         		\item Usuario sofisticado: conocen bien el SMBD para implementar aplicaciones que cumplan requisitos complejos.
         		\item Usuario independiente: utiliza paquetes de software específicos fáciles de usar para mantener una base de datos personal.
         	\end{itemize}
-            actividades que realizaría cada uno de ellos.
-            \item Explica las diferencias entre la \textbf{independencia de datos física} y \textbf{lógica}. ¿Cuál es más difícil de lograr y
-            por qué?
-            \item ¿Qué es un \textbf{diccionario de datos} y por qué es importante para el SMBD?
+
+            \item Explica las diferencias entre la \textbf{independencia de datos física} y \textbf{lógica}. ¿Cuál es más difícil de lograr y por qué? \\
+
+            \item ¿Qué es un \textbf{diccionario de datos} y por qué es importante para el SMBD? \\
+
             \item Indica las principales características de los modelos de datos más representativos. ¿Cuáles serían las
             diferencias entre los modelos relacional, orientado a objetos, semiestructurado y objeto-relacional? \\
           \begin{itemize}
@@ -67,7 +77,10 @@
 
           La diferencia entre los modelos está en cómo representan los datos, los modelos relacional y orientado a objetos tienen una estructura rígida mientras que el modelo semiestructurado es el más flexible.\\
 
-            \item Elabora una \textbf{línea de tiempo}, en dónde indiques \textbf{los principales hitos} en el desarrollo de las BDs.\\
+            \item Elabora una \textbf{línea de tiempo}, en dónde indiques \textbf{los principales hitos} en el desarrollo de las BDs.\\\\
+          {\Large\itshape \textbf{Principales hitos en el desarrollo de las Bases de Datos} \par}
+          \vspace{.5cm}
+          \vfill
 
 
                   \includegraphics[width=\textwidth]{imagenes/parte1.png}
@@ -79,7 +92,7 @@
             \item Indica las responsabilidades que tiene un \textbf{Sistema Manejador de Bases de Datos} y para cada responsabilidad, explica los problemas que surgirían sí dicha responsabilidad no se cumpliera. \\
 
 
-            \item Supón que un banco pequeño desea almacenarlos su información en una base de datos y le gustaría comprar el SMBD que tenga la menor cantidad de características posibles. Está interesado en ejecutar la aplicación en una sola computadora personal y no se planea compartir la información con nadie. Para cada una de las siguientescaracterísticas explica por qué se debería o no incluir en el SMBD que desea comprar (suponiendo que se pueden comprar por separado:) \textbf{seguridad, control de concurrencia, recuperación en caso de fallas, lenguaje de consulta, mecanismo de vistas, manejo de transacciones.}
+            \item Supón que un banco pequeño desea almacenarlos su información en una base de datos y le gustaría comprar el SMBD que tenga la menor cantidad de características posibles. Está interesado en ejecutar la aplicación en una sola computadora personal y no se planea compartir la información con nadie. Para cada una de las siguientescaracterísticas explica por qué se debería o no incluir en el SMBD que desea comprar (suponiendo que se pueden comprar por separado:) \textbf{seguridad, control de concurrencia, recuperación en caso de fallas, lenguaje de consulta, mecanismo de vistas, manejo de transacciones.} \\
           \end{enumerate}
 
             \section{Investigación.}
@@ -89,9 +102,11 @@
         	Calidad de datos se refiere a las técnicas y procesos utilizados para asegurar que un dato es adecuado para su uso en operaciones y toma de decisiones. Se relaciona con las bases de datos pues debido a la gran cantidad de información que tienen se debe asegurar que todos los datos sirven su propósito ya que de no hacerlo podría tenerse información incorrecta o poner en riesgo la seguridad de la base de datos.
 
             \item ¿Qué son las bases de datos \textbf{NoSQL}? indica el modelo de datos utilizado y algunos proveedores.
+
             \item ¿Qué es un \textbf{Almacén de datos}? Indica las diferencias entre éstos y una base de datos.
 
             \end{enumerate}
+
 
             \section*{Referencias}
             \begin{itemize}
