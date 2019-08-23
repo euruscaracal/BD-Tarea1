@@ -57,7 +57,24 @@
 
 
             \item Investiga cuáles serían las \textbf{responsabilidades} de una \textbf{DBA} y las de un \textbf{diseñador de bases de datos.}
-
+            
+            \begin{enumerate}
+              \item Las responsabilidades de un \textbf{DBA} son:
+              \begin{itemize}
+                  \item Autorizar el acceso a la base de datos. 
+                  \item Coordinar y monitorear el uso de la base de datos.
+                  \item Adquirir recursos de software y hardware según sea necesario.
+                  \item Asegurar la confiabilidad de la base de datos.
+                  \item Proteger la seguridad de la base de datos.
+              \end{itemize}
+  
+              \item Las responsabilidades de un \textbf{diseñador de bases de datos son}:
+              \begin{itemize}
+                  \item Identificar los datos que se almacenarán en la base de datos.
+                  \item Elegir las estructuras apropiadas para representar y almacenar los datos.
+                  \item Crear un diseño que cumpla con los requisitos de todos los posibles usuarios de la base de datos
+              \end{itemize}  
+      \end{enumerate}
             \item Investiga cuáles serían los distintos tipos de usuarios finales de una base de datos, indica las principales \\
 
           Las categorías de ususarios finales de una base de datos son:
@@ -74,6 +91,17 @@
             \textsc{Solución:} La independencia de datos física es cuando los cambios en la organización física de la base de datos no afectan al mundo exterior (es decir, los programas o los usuarios directos), mientras que la independencia de datos lógica es cuando los usuarios no se ven afectados por los cambios a nivel lógico (ya sean cambios en el esquema conceptual o cambios en los esquemas externos). La independencia lógica es más difícil de lograr ya que los programas de aplicación son muy independientes de la estructura lógica de los datos a los que accede (se han creado a partir de ella).
 
             \item ¿Qué es un \textbf{diccionario de datos} y por qué es importante para el SMBD? \\
+            
+            Un \textbf{diccionario de datos} es un conjunto de definiciones de otros objetos del sistema. Es importante para el SMBD ya que proporciona información acerca de:
+            \begin{itemize}
+              \item Estructura lógica y física de la base de datos.
+              \item Definición de todos los objetos de la base de datos. 
+              \item Espacio asignado y utilizado por los objetos.
+              \item Valores por omisión en las columnas.
+              \item Información acerca de las restricciones de integridad.
+              \item Privilegios y roles otorgados a los usuarios.
+              \item Estadísticas de utilización, frecuencias de consultas, de transacciones y el número de accesos a diferentes porciones de la base de datos.
+            \end{itemize}
 
             \item Indica las principales características de los modelos de datos más representativos. ¿Cuáles serían las
             diferencias entre los modelos relacional, orientado a objetos, semiestructurado y objeto-relacional? \\
