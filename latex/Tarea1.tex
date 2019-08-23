@@ -26,7 +26,7 @@
 
 \author{Teresa Becerril Torres \\
         $\#$ de cuenta: $315045132$ \\
-        Miguel Torres \\
+        Miguel Ángel Torres Sánchez \\
         $\#$ de cuenta: $315300442$ \\
         Nicole Romina Traschikoff García \\
         $\#$ de cuenta: \\
@@ -39,17 +39,39 @@
 \begin{enumerate}
     \item \textbf{Conceptos generales:}
     \begin{enumerate}[a. ]
-        \item ¿Por qué elegirías almacenar datos en un sistema de base de datos en lugar de simplemente almacenarlos utilizando el sistema de archivos de un sistema operativo? ¿En qué casos no tendríaa sentido utilizar un sistema de base de datos?
+        \item ¿Por qué elegirías almacenar datos en un sistema de base de datos en lugar de simplemente almacenarlos utilizando el sistema de archivos de un sistema operativo? ¿En qué casos no tendríaa sentido utilizar un sistema de base de datos?\\
+	Porque en una base de datos bien diseñada se asegura la integridad de los datos y facilita trabajar con ellos a usuarios y desarrolladores. No tendría sentido usar una base de datos cuando los usuarios son pocos y cuando las cantidades de información no son grandes y no crecerán mucho o no existirá por largos periodos de tiempo.
 
         \item ¿Qué ventajas y desventajas encuentras al trabajar con una base de datos?
 
-        \item Investiga cuáles serían los distintos tipos de usuarios finales de una base de datos, indica las principales actividades que realizaría cada uno de ellos.
+        \item Investiga cuáles serían los distintos tipos de usuarios finales de una base de datos, indica las principales actividades que realizaría cada uno de ellos.\\
+	Las categorías de ususarios finales de una base de datos son:
+
+	\begin{itemize}
+		\item Usuario casual: acceden ocasionalmente a la base de datos con la necesidad de información diversa.
+		\item Usuario paramétrico: consultan y actualizan constantemente la base de datos con funciones ya programadas y probadas.
+		\item Usuario sofisticado: conocen bien el SMBD para implementar aplicaciones que cumplan requisitos complejos.
+		\item Usuario independiente: utiliza paquetes de software específicos fáciles de usar para mantener una base de datos personal.
+	\end{itemize}
 
         \item Explica las diferencias entre la independencia de datos física y lógica. ¿Cuál es más difícil de lograr y por qué?
 
         \item ¿Qué es un diccionario de datos y por qué es importante para el SMBD?
 
-        \item Indica las principales características de los modelos de datos más representativos. ¿Cuáles serían las diferencias entre los modelos relacional, orientado a objetos, semiestructurado y objeto-relacional?
+        \item Indica las principales características de los modelos de datos más representativos. ¿Cuáles serían las diferencias entre los modelos relacional, orientado a objetos, semiestructurado y objeto-relacional?\\
+
+	\begin{itemize}
+		
+		\item \textbf{Modelo relacional}. Es basado en tablas. Todo el procesamiento se realiza sobre tablas y el resultado son tablas.
+		\item \textbf{Modelo orientado a objetos}. Los datos se modelan como objetos con estado y comportamiento.
+
+		\item \textbf{Modelo semiestructurado}. Representación de los datos menos rígida. Colección de nodos con su propia descripción de los datos.
+
+		\item \textbf{Modelo objeto-relacional}. Aprovecha características de datos en tablas y objetos. 
+
+	\end{itemize}
+
+	La diferencia entre los modelos está en cómo representan los datos, los modelos relacional y orientado a objetos tienen una estructura rígida mientras que el modelo semiestructurado es el más flexible.\\
 
         \item Elabora una línea de tiempo, en dónde indiques los principales hitos en el desarrollo de las BDs.
 
@@ -62,7 +84,8 @@
     \item \textbf{Investigación}
     \begin{enumerate}[a)]
 
-        \item ¿Qué es la Calidad de Datos y cómo se relaciona con las bases de datos?
+        \item ¿Qué es la Calidad de Datos y cómo se relaciona con las bases de datos?\\
+	Calidad de datos se refiere a las técnicas y procesos utilizados para asegurar que un dato es adecuado para su uso en operaciones y toma de decisiones. Se relaciona con las bases de datos pues debido a la gran cantidad de información que tienen se debe asegurar que todos los datos sirven su propósito ya que de no hacerlo podría tenerse información incorrecta o poner en riesgo la seguridad de la base de datos.
 
         \item ¿Qué son las bases de datosNoSQL? indica el modelo de datos utilizado y algunos proveedores.
 
