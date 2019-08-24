@@ -88,7 +88,7 @@
 
             \item Explica las diferencias entre la \textbf{independencia de datos física} y \textbf{lógica}. ¿Cuál es más difícil de lograr y por qué?
 
-            \textsc{Solución:} La independencia de datos física es cuando los cambios en la organización física de la base de datos no afectan al mundo exterior (es decir, los programas o los usuarios directos), mientras que la independencia de datos lógica es cuando los usuarios no se ven afectados por los cambios a nivel lógico (ya sean cambios en el esquema conceptual o cambios en los esquemas externos). La independencia lógica es más difícil de lograr ya que los programas de aplicación son muy independientes de la estructura lógica de los datos a los que accede (se han creado a partir de ella).
+             La independencia de datos física es cuando los cambios en la organización física de la base de datos no afectan al mundo exterior (es decir, los programas o los usuarios directos), mientras que la independencia de datos lógica es cuando los usuarios no se ven afectados por los cambios a nivel lógico (ya sean cambios en el esquema conceptual o cambios en los esquemas externos). La independencia lógica es más difícil de lograr ya que los programas de aplicación son muy independientes de la estructura lógica de los datos a los que accede (se han creado a partir de ella).
 
             \item ¿Qué es un \textbf{diccionario de datos} y por qué es importante para el SMBD? \\
             
@@ -130,7 +130,17 @@
                   \includegraphics[width=\textwidth]{imagenes/parte4.png}
 
 
-            \item Indica las responsabilidades que tiene un \textbf{Sistema Manejador de Bases de Datos} y para cada responsabilidad, explica los problemas que surgirían sí dicha responsabilidad no se cumpliera. \\
+            \item Indica las responsabilidades que tiene un \textbf{Sistema Manejador de Bases de Datos} y para cada responsabilidad, explica los problemas que surgirían si dicha responsabilidad no se cumpliera. \\
+
+	\begin{itemize}
+
+		\item \textbf{Construir}. Los problemas serían que habría una inconsistencia en los datos, no habría homogeneidad en éstos ni habría un orden o una estructura en los datos. Es decir, nuestros datos estaría hechos un caos. 
+		\item \textbf{Definir}. El problema sería que no podríamos guardar los datos, por lo que habría una pérdida parcial o total de éstos.
+		\item \textbf{Manipular}. El problema sería que no se podrían recuperar los datos perdidos, ni tampoco se podría consultar o modificar los datos. 
+
+		\item \textbf{Compartir}. El problema sería que  más de un usuario no podría manipular la base de datos (nuestro objetivo es que varias personas puedan, de acuerdo a sus necesidades, manipular la base, cuidando en no caer en una inconsistencia de concurrencia).
+
+	\end{itemize}
 
 
             \item Supón que un banco pequeño desea almacenarlos su información en una base de datos y le gustaría comprar el SMBD que tenga la menor cantidad de características posibles. Está interesado en ejecutar la aplicación en una sola computadora personal y no se planea compartir la información con nadie. Para cada una de las siguientescaracterísticas explica por qué se debería o no incluir en el SMBD que desea comprar (suponiendo que se pueden comprar por separado:) \textbf{seguridad, control de concurrencia, recuperación en caso de fallas, lenguaje de consulta, mecanismo de vistas, manejo de transacciones.} \\
@@ -140,6 +150,7 @@
             \begin{enumerate}[a)]
 
             \item ¿Qué es la \textbf{Calidad de Datos} y cómo se relaciona con las bases de datos? \\
+
         	Calidad de datos se refiere a las técnicas y procesos utilizados para asegurar que un dato es adecuado para su uso en operaciones y toma de decisiones. Se relaciona con las bases de datos pues debido a la gran cantidad de información que tienen se debe asegurar que todos los datos sirven su propósito ya que de no hacerlo podría tenerse información incorrecta o poner en riesgo la seguridad de la base de datos.
 
             \item ¿Qué son las bases de datos \textbf{NoSQL}? indica el modelo de datos utilizado y algunos proveedores.\\
