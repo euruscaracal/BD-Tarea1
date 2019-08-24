@@ -144,6 +144,23 @@
 
 
             \item Supón que un banco pequeño desea almacenarlos su información en una base de datos y le gustaría comprar el SMBD que tenga la menor cantidad de características posibles. Está interesado en ejecutar la aplicación en una sola computadora personal y no se planea compartir la información con nadie. Para cada una de las siguientescaracterísticas explica por qué se debería o no incluir en el SMBD que desea comprar (suponiendo que se pueden comprar por separado:) \textbf{seguridad, control de concurrencia, recuperación en caso de fallas, lenguaje de consulta, mecanismo de vistas, manejo de transacciones.} \\
+
+	\begin{itemize}
+	
+		\item \textbf{Seguridad}. Debemos añadirla porque, sin importar el tamaño de nuestra base de datos, nuestros datos deben estar siempre protegidos. 
+
+		\item \textbf{Control de concurrencia}. No es necesario incluirla. Como se trata de un banco pequeño, el número de personas que manipulen la base de datos no será grande, por lo que podemos controlar esto de forma "manual" en caso de que se llegue a presentar un problema de concurrencia (lo cual es poco probable por tratarse de pocos usuarios).
+
+		\item \textbf{Recuperación en caso de fallas}. Debemos incluirla porque siempre vamos a estar expuestos a pérdidas de datos, sean intencionales o no, y en esos casos tenemos que poder recuperar los datos que necesitamos.
+
+		\item \textbf{Lenguaje de consulta}. Debemos incluirlo porque siempre vamos a tener la necesidad de consultar los datos en la base y, sin este lenguaje, no podríamos manipular los datos que están en ella. 
+
+		\item \textbf{Mecanismo de vistas}. No es necesario incluirlo ya que no se planea compartir la información con nadie. 
+
+		\item \textbf{Manejo de transacciones}. Debemos incluirlo porque, a pesar de ser un banco pequeño, sin esto no podemos garantizar la integridad de nuestros datos.
+
+	\end{itemize}	
+
           \end{enumerate}
 
             \section{Investigación.}
